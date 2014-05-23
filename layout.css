@@ -1,0 +1,114 @@
+* {
+	outline: none;
+}
+
+body {
+	background-image: url('images/wallpaper.png') !important;
+	background-size: cover;
+}
+
+input {
+	/*Size*/
+	display: block;
+	width: 960px;
+	height: 30px;
+	/*Positioning*/
+	margin-top: 20%;
+	margin-left: auto;
+	margin-right: auto;
+	/*Coloring*/
+	background-color: rgba(255, 255, 255, .4);
+	border:solid 1px #000000;
+	font-size:1.8em;
+}
+
+#navigation{
+	display:block;
+	font-family:"Verdana";
+	font-size: 3em;
+	font-weight: lighter;
+	margin-top: 20px;
+	margin-left: 470px;
+	width:1200px;
+}
+
+a {
+	color: black;
+	text-decoration: none;
+}
+
+a:hover, a.hovered {
+	color: white;
+}
+
+#navigation ul {
+	width: 300px;
+	text-align: left;
+	list-style-position: inside;
+	list-style: none;
+	margin: 0;
+	padding:0;
+}
+
+#navigation > ul > li    {
+	position: relative;
+}
+
+#navigation ul ul {
+	width: 1000px;
+	position: absolute;
+	display: inline-block;
+	height: 300px;
+	overflow: hidden;
+	text-align: left;
+	list-style-position: inside;
+	list-style-type: none;
+	opacity:0;
+	visibility: hidden;
+	
+	-webkit-transition: all 0.3s ease-in;
+            -moz-transition: all 0.5s ease-in;
+            -o-transition: all 0.3s ease-in;
+            -ms-transition: all 0.3s ease-in;
+            transition: all 0.3s ease-in;
+}
+
+#navigation > ul > li:hover ul ul, #navigation > ul > li > a:hover ul ul {
+	width:0;
+}
+
+/* tertiary drop-down box */
+#navigation ul ul ul{
+	left:170px;
+	width:170px;
+}
+#navigation > ul > li:hover ul, #navigation > ul > li > a:hover ul, #navigation ul ul li:hover > ul, #navigation ul ul li a:hover > ul, #navigation > ul > li > a.hovered ul, #navigation > ul > li.hovered ul{
+	left: auto;
+	visibility: visible;
+	opacity: 1;
+}
+
+/* drop-down item styles */
+/* if you want different styling for tertiary menus, just copy the 4 rules below and insert an additional ul: for example: "#navigation ul ul li", becomes: "#navigation ul ul ul li" */
+
+
+
+#navigation ul ul li{
+	width:auto;
+	display: inline-block;
+	float: left;
+	padding-left: 20px;
+	z-index:100;
+}
+
+#navigation ul ul li a {
+	display:inline-block;
+	text-decoration:none;
+	margin:0 0px;
+	padding:0px 0;
+	color:black;
+}
+
+#navigation ul ul li a:hover, #navigation ul ul li a.hovered {
+	color: white;
+}
