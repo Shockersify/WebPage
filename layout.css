@@ -3,19 +3,24 @@
 }
 
 body {
-	background-image: url('images/wallpaper.png') !important;
-	background-size: cover;
+	background: url('images/wallpaper.png') no-repeat center center fixed!important;
+	background-size: 100%;
+}
+
+#main {
+	display: block;
+	width:50%;
+	height: auto;
+	margin-top: 20%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 input {
 	/*Size*/
 	display: block;
-	width: 960px;
+	width: 100%;
 	height: 30px;
-	/*Positioning*/
-	margin-top: 20%;
-	margin-left: auto;
-	margin-right: auto;
 	/*Coloring*/
 	background-color: rgba(255, 255, 255, .4);
 	border:solid 1px #000000;
@@ -25,11 +30,13 @@ input {
 #navigation{
 	display:block;
 	font-family:"Verdana";
-	font-size: 3em;
+	font-size: 2.5vw;
 	font-weight: lighter;
 	margin-top: 20px;
-	margin-left: 470px;
-	width:1200px;
+}
+
+#category {
+	cursor: pointer;
 }
 
 a {
@@ -42,7 +49,8 @@ a:hover, a.hovered {
 }
 
 #navigation ul {
-	width: 300px;
+	width: auto;
+	position: relative;
 	text-align: left;
 	list-style-position: inside;
 	list-style: none;
@@ -55,10 +63,10 @@ a:hover, a.hovered {
 }
 
 #navigation ul ul {
-	width: 1000px;
+	width: 100%;
 	position: absolute;
 	display: inline-block;
-	height: 300px;
+	height: auto;
 	overflow: hidden;
 	text-align: left;
 	list-style-position: inside;
@@ -73,15 +81,6 @@ a:hover, a.hovered {
             transition: all 0.3s ease-in;
 }
 
-#navigation > ul > li:hover ul ul, #navigation > ul > li > a:hover ul ul {
-	width:0;
-}
-
-/* tertiary drop-down box */
-#navigation ul ul ul{
-	left:170px;
-	width:170px;
-}
 #navigation > ul > li:hover ul, #navigation > ul > li > a:hover ul, #navigation ul ul li:hover > ul, #navigation ul ul li a:hover > ul, #navigation > ul > li > a.hovered ul, #navigation > ul > li.hovered ul{
 	left: auto;
 	visibility: visible;
@@ -97,6 +96,7 @@ a:hover, a.hovered {
 	width:auto;
 	display: inline-block;
 	float: left;
+	position:relative;
 	padding-left: 20px;
 	z-index:100;
 }
@@ -111,4 +111,35 @@ a:hover, a.hovered {
 
 #navigation ul ul li a:hover, #navigation ul ul li a.hovered {
 	color: white;
+}
+
+@media screen and (max-device-width : 640px) and (orientation:portrait){
+
+	body {
+		background: url('images/wallpaper.png') no-repeat;
+		background-size: 100% auto;
+	}
+
+	#navigation {
+		font-size: 2vw;
+	}
+	#navigation ul ul {
+		width: 100%;
+		position: relative;
+		display: block;
+		max-height: 0;
+		opacity:0;
+		-webkit-transition: all 0.3s ease-in;
+				-moz-transition: all 0.3s ease-in;
+				-o-transition: all 0.3s ease-in;
+				-ms-transition: all 0.3s ease-in;
+				transition: all 0.3s ease-in;
+	}
+
+	#navigation > ul > li:hover ul, #navigation > ul > li > a:hover ul, #navigation ul ul li:hover > ul, #navigation ul ul li a:hover > ul, #navigation > ul > li > a.hovered ul, #navigation > ul > li.hovered ul{
+		left: auto;
+		max-height: 1200px;
+		display:block;
+		opacity: 1;
+	}
 }
