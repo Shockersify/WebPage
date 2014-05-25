@@ -34,7 +34,10 @@ $(document).keyup(function() {
 });
 
 $(document).keypress(function(event) {
+	var pattern = /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
 	if(event.which == 13 && $("a.hovered").length) {
 		$('form').attr('action', $("a.hovered").attr('href'));
+	} else if(event.which == 13 && pattern.test($("#search").val())) {
+		$('form').attr('action', "http://" + $("#search").val());
 	}
 });

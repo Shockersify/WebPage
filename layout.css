@@ -4,7 +4,7 @@
 
 body {
 	background: url('images/wallpaper.png') no-repeat center center fixed!important;
-	background-size: 100%;
+	background-size: ;
 }
 
 #main {
@@ -40,7 +40,7 @@ input {
 }
 
 a {
-	color: black;
+	color: rgba(0, 0, 0, .7);
 	text-decoration: none;
 }
 
@@ -75,13 +75,13 @@ a:hover, a.hovered {
 	visibility: hidden;
 	
 	-webkit-transition: all 0.3s ease-in;
-            -moz-transition: all 0.5s ease-in;
+            -moz-transition: all 0.3s ease-in;
             -o-transition: all 0.3s ease-in;
             -ms-transition: all 0.3s ease-in;
             transition: all 0.3s ease-in;
 }
 
-#navigation > ul > li:hover ul, #navigation > ul > li > a:hover ul, #navigation ul ul li:hover > ul, #navigation ul ul li a:hover > ul, #navigation > ul > li > a.hovered ul, #navigation > ul > li.hovered ul{
+#navigation > ul > li > a:hover~ul, #navigation ul ul:hover, #navigation ul ul li a:hover > ul, #navigation > ul > li > a.hovered ul, #navigation > ul > li.hovered ul{
 	left: auto;
 	visibility: visible;
 	opacity: 1;
@@ -106,7 +106,6 @@ a:hover, a.hovered {
 	text-decoration:none;
 	margin:0 0px;
 	padding:0px 0;
-	color:black;
 }
 
 #navigation ul ul li a:hover, #navigation ul ul li a.hovered {
