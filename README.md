@@ -7,7 +7,7 @@ A custom homepage I made for myself but I've put it up for others to try out and
 
 Features:
 
-*Animated menu with links to sites
-*Searchbar for startpage search
-*Typing in searchbar will select links on page for fast web travel.
-*More to come...
+* Animated menu with links to sites
+* Searchbar for startpage search
+* Typing in searchbar will select links on page for fast web travel.
+* More to come...
