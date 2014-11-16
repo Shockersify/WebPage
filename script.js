@@ -8,6 +8,22 @@ $(document).ready(function() {
         e.preventDefault();
         $(this).toggleClass('hovered');
     });
+	/*Put in zip code or weather.com code(if you're not in US)*/
+	$('#test').weatherfeed(['49931'], {
+		unit: 'f',
+		forecast: true,
+		wind: false,
+		link: false,
+		showerror: false,
+		image: false
+	});
+});
+
+$(window).bind("load", function() {
+	$(".icon").each(function() {
+		$(this).attr('src','images/weather/' + $(this).parent().css("background-image").substring(45,47) + '.svg');
+	});
+	$('.weatherForecastItem').css('background-image', 'none');
 });
 
 $(document).keyup(function() {
@@ -38,6 +54,7 @@ $(document).keypress(function(event) {
 	var wikiPattern = /^(wiki:)/;
 	var youtPattern = /^(youtube:)/;
 	var wolfPattern = /^(wolfram:)/;
+	$("<img>").attr('src','images/11.svg');
 	
 	if(event.which == 13 && $("a.hovered").length) {
 		$('form').attr('action', $("a.hovered").attr('href'));

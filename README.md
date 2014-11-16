@@ -3,7 +3,7 @@ Homepage
 
 A custom homepage I made for myself but I've put it up for others to try out and use for themselves.
 
-![Alt text](Screenshots/preview.png)
+![Alt text](Screenshots/preview.jpg)
 
 Features:
 
