@@ -2,10 +2,15 @@
 	outline: none;
 }
 
-body {
+/*body {
 	background: url('images/wallpaper.jpg') no-repeat center center fixed!important;
 	background-size: ;
-}
+}*/
+
+/* backgrounds */
+.day { background: url('images/wallpaper-day.jpg') no-repeat center center fixed!important; }
+.sunset { background: url('images/wallpaper-sunset.jpg') no-repeat center center fixed!important; }
+.night { background: url('images/wallpaper-night.jpg') no-repeat center center fixed!important;; }
 
 #main {
 	display: block;

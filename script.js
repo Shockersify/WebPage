@@ -4,11 +4,27 @@
 */
 
 $(document).ready(function() {
+    
+    var d = new Date();
+    var n = d.getHours();
+    if (n >= 19 || n < 6) {
+      // If time is after 7PM or before 6AM, apply night theme to ‘body’
+      document.body.className = "night";
+    }
+    else if (n > 16 && n < 19) {
+      // If time is between 4PM – 7PM sunset theme to ‘body’
+      document.body.className = "sunset";
+    }
+    else {
+      // Else use ‘day’ theme
+      document.body.className = "day";
+    }
+      
     $('#category').bind('touchstart touchend', function(e) {
         e.preventDefault();
         $(this).toggleClass('hovered');
     });
-	/*Put in zip code or weather.com code(if you're not in US)*/
+	/*Put in zip code or weather.com code(if you're not in US)
 	$('#test').weatherfeed(['49931'], {
 		unit: 'f',
 		forecast: true,
@@ -17,6 +33,14 @@ $(document).ready(function() {
 		showerror: false,
 		image: false
 	});
+	$('#test').simpleWeather({
+		location: '49931',
+		woeid: '',
+		unit: 'f',
+		success: function(weather) {
+			
+		}
+	})*/
 });
 
 $(window).bind("load", function() {
