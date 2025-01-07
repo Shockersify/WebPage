@@ -74,12 +74,14 @@ $(document).keypress(function(event) {
 	$("<img>").attr('src','images/11.svg');
 	
 	if(event.which == 13 && $("a.hovered").length) {
+		//$('form').attr('method','POST');
 		$('form').attr('action', $("a.hovered").attr('href'));
 	} else if(event.which == 13 && sitePattern.test($("#search").val())) {
 		$('form').attr('method','POST');
 		$('form').attr('action', "http://" + $("#search").val());
 	} else if(event.which == 13 && wolfPattern.test($("#search").val())) {
-		//$('form').attr('action', $("#search").val().substring(8);
+		$('form').attr('method','POST');
+		$('form').attr('action', "http://www.wolframalpha.com/input?i=" + $("#search").val().substring(8));
 	} else if(event.which == 13 && wikiPattern.test($("#search").val().substring(0,5))) {
 		$('form').attr('method','POST');
 		$('form').attr('action', "http://en.wikipedia.org/wiki/" + $("#search").val().substring(5));
