@@ -8,9 +8,9 @@
 }*/
 
 /* backgrounds */
-.day { background: url('images/wallpaper-day.jpg') no-repeat center center fixed!important; }
-.sunset { background: url('images/wallpaper-sunset.jpg') no-repeat center center fixed!important; }
-.night { background: url('images/wallpaper-night.jpg') no-repeat center center fixed!important;; }
+.day { background: url('images/wallpaper-day.jpg') no-repeat center center fixed!important; background-size: cover!important; }
+.sunset { background: url('images/wallpaper-sunset.jpg') no-repeat center center fixed!important; background-size: cover!important; }
+.night { background: url('images/wallpaper-night.jpg') no-repeat center center fixed!important; background-size: cover!important; }
 
 #main {
 	display: block;

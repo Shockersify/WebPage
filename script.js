@@ -8,15 +8,15 @@ $(document).ready(function() {
     var d = new Date();
     var n = d.getHours();
     if (n >= 19 || n < 6) {
-      // If time is after 7PM or before 6AM, apply night theme to ‘body’
+      // If time is after 7PM or before 6AM, apply night theme to ï¿½bodyï¿½
       document.body.className = "night";
     }
     else if (n > 16 && n < 19) {
-      // If time is between 4PM – 7PM sunset theme to ‘body’
+      // If time is between 4PM ï¿½ 7PM sunset theme to ï¿½bodyï¿½
       document.body.className = "sunset";
     }
     else {
-      // Else use ‘day’ theme
+      // Else use ï¿½dayï¿½ theme
       document.body.className = "day";
     }
       
@@ -41,13 +41,6 @@ $(document).ready(function() {
 			
 		}
 	})*/
-});
-
-$(window).bind("load", function() {
-	$(".icon").each(function() {
-		$(this).attr('src','images/weather/' + $(this).parent().css("background-image").substring(45,47) + '.svg');
-	});
-	$('.weatherForecastItem').css('background-image', 'none');
 });
 
 $(document).keyup(function() {
@@ -83,12 +76,15 @@ $(document).keypress(function(event) {
 	if(event.which == 13 && $("a.hovered").length) {
 		$('form').attr('action', $("a.hovered").attr('href'));
 	} else if(event.which == 13 && sitePattern.test($("#search").val())) {
+		$('form').attr('method','POST');
 		$('form').attr('action', "http://" + $("#search").val());
 	} else if(event.which == 13 && wolfPattern.test($("#search").val())) {
 		//$('form').attr('action', $("#search").val().substring(8);
 	} else if(event.which == 13 && wikiPattern.test($("#search").val().substring(0,5))) {
+		$('form').attr('method','POST');
 		$('form').attr('action', "http://en.wikipedia.org/wiki/" + $("#search").val().substring(5));
 	} else if(event.which == 13 && youtPattern.test($("#search").val().substring(0,8))) {
+		$('form').attr('method','POST');
 		$('form').attr('action', "http://www.youtube.com/results?search_query=" + $("#search").val().substring(8));
 	}
 });
